@@ -1,9 +1,16 @@
 {
-  "name": "ofa2-model",
+  "name": "@ofa2/ofa2-model",
   "version": "1.0.0",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint src/",
+    "compile": "node scripts/build.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
     "@babel/plugin-external-helpers": "^7.0.0-beta.46",
