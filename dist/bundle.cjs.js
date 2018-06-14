@@ -64,6 +64,10 @@ function lift(done) {
 
       let model = require(filePath);
 
+      if (model.default) {
+        model = model.default;
+      }
+
       let modelName = pathUtil.basename(fileName, '.js');
       models[modelName] = model;
       model.options = model.options || {}; // cache connection config

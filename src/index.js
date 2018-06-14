@@ -64,6 +64,9 @@ function lift(done) {
 
         let filePath = filePaths[index];
         let model = require(filePath);
+        if (model.default) {
+          model = model.default;
+        }
         let modelName = pathUtil.basename(fileName, '.js');
 
         models[modelName] = model;
