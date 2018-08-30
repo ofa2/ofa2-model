@@ -84,6 +84,7 @@ function lift(done) {
 
       // specify native query promise type
       let connectionOptions = {
+        useNewUrlParser: true,
         config: {
           autoIndex:
             typeof modelsConfig.autoIndex === 'undefined' ? true : !!modelsConfig.autoIndex,

@@ -85,6 +85,7 @@ function lift(done) {
 
 
     let connectionOptions = {
+      useNewUrlParser: true,
       config: {
         autoIndex: typeof modelsConfig.autoIndex === 'undefined' ? true : !!modelsConfig.autoIndex
       }
