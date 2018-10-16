@@ -43,7 +43,7 @@ function lift(done) {
     return [fileNames, filePaths, Promise.map(filePaths, filePath => {
       let extname = pathUtil.extname(filePath);
 
-      if (extname !== '.js') {
+      if (extname !== '.js' && extname !== '.ts') {
         return null;
       }
 
@@ -69,6 +69,7 @@ function lift(done) {
       }
 
       let modelName = pathUtil.basename(fileName, '.js');
+      modelName = pathUtil.basename(modelName, '.ts');
       models[modelName] = model;
       model.options = model.options || {}; // cache connection config
 

@@ -45,7 +45,7 @@ function lift(done) {
         filePaths,
         Promise.map(filePaths, (filePath) => {
           let extname = pathUtil.extname(filePath);
-          if (extname !== '.js') {
+          if (extname !== '.js' && extname !== '.ts') {
             return null;
           }
           return statAsync(filePath);
@@ -68,6 +68,7 @@ function lift(done) {
           model = model.default;
         }
         let modelName = pathUtil.basename(fileName, '.js');
+        modelName = pathUtil.basename(modelName, '.ts');
 
         models[modelName] = model;
         model.options = model.options || {};
