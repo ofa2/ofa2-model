@@ -1,6 +1,6 @@
 {
   "name": "@ofa2/ofa2-model",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "license": "MIT",
